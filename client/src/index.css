@@ -1,0 +1,36 @@
+/* Variable declaration */
+:root {
+  --primary-main: #3dab93;
+  --secondary-main: #f4f6f8;
+  --black-color : black;
+  --white-color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  /* font-size: 62.5%; */
+  background-color: var(--secondary-main);
+}
+
+body {
+  font-family:Helvetica, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+background: #c3c3c3;
+border-radius: 1rem;
+}
