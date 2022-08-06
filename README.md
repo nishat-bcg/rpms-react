@@ -59,4 +59,4 @@ npm start
 
 - Home page
 
-![Alt text](/screenshot/RPMS-Home.jpg?raw=true 'Home Page')
+![Home Page](screenshot/RPMS-Home.jpg?raw=true 'Home Page')
