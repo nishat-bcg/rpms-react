@@ -21,18 +21,36 @@ Retail promotion management system, catering to the need of managing promotions 
 - Ensured proper **Error Handling** while consuming api.
 - If no data is provided and used the default data stored in **reducer**.
 
-### Getting Started With The Application
+### To Start Backend Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Create virtual environment (for windows)
 
-### Available Scripts
+```
+venv/Scripts/activate.bat
+```
 
-In the project directory, you can run:
+- Install dependencies
 
-#### `npm start`
+```
+pip install -r requirements.txt
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Start Application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+python app.py
+```
+
+### To Start Frontend Application
+
+- Install dependencies
+
+```
+npm install
+```
+
+- Start Application
+
+```
+npm start
+```
