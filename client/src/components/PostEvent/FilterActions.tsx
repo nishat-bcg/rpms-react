@@ -22,10 +22,16 @@ const INITIAL_STATE = {
 
 export default function FilterActions() {
   const { state, handleChange } = useForm(INITIAL_STATE);
+  const [btnEnable, setBtnEnable] = useState<boolean>(true);
   const { entities: refCalendar } = useAppSelector(
     (state) => state.refCalendar
   );
   const { entities: productData } = useAppSelector((state) => state.product);
+
+  useEffect(() => {
+    if (state.brand && state.category && state.product && state.retailer)
+      setBtnEnable(false);
+  }, [state]);
 
   return (
     <Grid
@@ -197,12 +203,22 @@ export default function FilterActions() {
         </FormControl>
       </Grid>
       <Grid item md={2} sm={6} xs={6}>
-        <Button variant="contained" fullWidth sx={{ height: 55 }}>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ height: 55 }}
+          disabled={btnEnable}
+        >
           Apply Filters
         </Button>
       </Grid>
       <Grid item md={2} sm={6} xs={6}>
-        <Button variant="contained" fullWidth sx={{ height: 55 }}>
+        <Button
+          variant="contained"
+          fullWidth
+          sx={{ height: 55 }}
+          disabled={btnEnable}
+        >
           Clear Filters
         </Button>
       </Grid>

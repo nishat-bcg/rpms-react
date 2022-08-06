@@ -14,6 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 
+import { ApiLoader } from 'src/components/index';
 import { useAppDispatch, useAppSelector } from 'src/utils/hooks/useRedux';
 import { fetchCampaignMatrix } from 'src/stores/campaign.slice';
 import { SnackbarContext } from 'src/utils/providers/Snackbar';
@@ -23,7 +24,9 @@ import { ColorIndicator } from 'src/utils/constant';
 ChartJS.register(...registerables);
 
 export default function EfficiencyMatrix() {
-  const { entities, error } = useAppSelector((state) => state.campaign);
+  const { entities, error, loading } = useAppSelector(
+    (state) => state.campaign
+  );
   const { setAlertSeverity, trackMessage, showSnackbar } =
     useContext(SnackbarContext);
   const dispatch = useAppDispatch();
@@ -71,6 +74,7 @@ export default function EfficiencyMatrix() {
 
   return (
     <>
+      {loading && <ApiLoader open={true} />}
       <Box>
         <TableContainer sx={{ marginTop: 3, marginBottom: 3 }}>
           <Table aria-label="Calendar Optimization table">

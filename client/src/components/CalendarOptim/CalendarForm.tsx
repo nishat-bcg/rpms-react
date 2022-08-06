@@ -23,6 +23,16 @@ import useForm from 'src/utils/hooks/useForm';
 import { useAppDispatch } from 'src/utils/hooks/useRedux';
 import { addToCalendar } from 'src/stores/calendar.slice';
 import { closeModal } from 'src/stores/modal.slice';
+import { lastEdited } from 'src/utils/constant';
+
+type CalendarForm = {
+  name: string;
+  startDate: null | string;
+  numberOfWeeks: string | number;
+  marketShare: string;
+  disruptionLevel: string;
+  brandline: boolean;
+};
 
 const INITIAL_STATE = {
   name: '',
@@ -35,20 +45,10 @@ const INITIAL_STATE = {
 };
 
 export default function NewCalendarForm() {
-  const { state, handleChange } = useForm(INITIAL_STATE);
+  const { state, handleChange } = useForm<CalendarForm>(INITIAL_STATE);
   const dispatch = useAppDispatch();
 
-  const lastEdited = useMemo(
-    () =>
-      new Date().toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: 'numeric',
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-      }),
-    []
-  );
+  const memolastEdited = useMemo(() => lastEdited(), []);
 
   return (
     <Box>
@@ -203,7 +203,7 @@ export default function NewCalendarForm() {
               dispatch(
                 addToCalendar({
                   name: state.name,
-                  last_edited: lastEdited,
+                  last_edited: memolastEdited,
                   status: 'Processed',
                 })
               );

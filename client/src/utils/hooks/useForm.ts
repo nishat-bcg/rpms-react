@@ -1,7 +1,7 @@
 import { SelectChangeEvent } from '@mui/material';
 import React, { useState, useCallback } from 'react';
 
-export default function useForm(initialState: any) {
+export default function useForm<T>(initialState: T) {
   const [state, setState] = useState(initialState);
 
   function handleChange(e: React.ChangeEvent | SelectChangeEvent) {

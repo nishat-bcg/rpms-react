@@ -2,6 +2,7 @@ import { useEffect, useContext, useMemo } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Box } from '@mui/material';
 
+import { ApiLoader } from 'src/components/index';
 import { useAppSelector, useAppDispatch } from 'src/utils/hooks/useRedux';
 import { SnackbarContext } from 'src/utils/providers/Snackbar';
 import { fetchDetailedTable } from 'src/stores/detailedTable.slice';
@@ -55,7 +56,9 @@ const columns = [
 ];
 
 export default function DetailedTable() {
-  const { entities, error } = useAppSelector((state) => state.detailedTable);
+  const { entities, error, loading } = useAppSelector(
+    (state) => state.detailedTable
+  );
   const { setAlertSeverity, trackMessage, showSnackbar } =
     useContext(SnackbarContext);
 
@@ -100,14 +103,17 @@ export default function DetailedTable() {
   );
 
   return (
-    <Box sx={{ height: 400 }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[5, 10, 25]}
-        components={{ Toolbar: GridToolbar }}
-      />
-    </Box>
+    <>
+      {loading && <ApiLoader open={true} />}
+      <Box sx={{ height: 400 }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={10}
+          rowsPerPageOptions={[5, 10, 25]}
+          components={{ Toolbar: GridToolbar }}
+        />
+      </Box>
+    </>
   );
 }

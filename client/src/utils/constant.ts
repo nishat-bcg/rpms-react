@@ -14,3 +14,15 @@ export function ColorIndicator(target: string) {
       return '';
   }
 }
+
+export const lastEdited = () => {
+  const time = new Date().toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
+  let tm = time.split(',');
+  return tm[1].replace(/PM|AM/i, '').trim() + ' ' + tm[0];
+};
