@@ -59,16 +59,18 @@ npm start
 
 - Home page
 
-![Home Page](screenshot/RPMS-Home.png?raw=true 'Home Page')
+  ![Home Page](screenshot/RPMS-Home.png?raw=true 'Home Page')
 
 - Calendar Optimization
 
-![Calendar Optimization](screenshot/RPMS-CalendarOptim.png?raw=true 'Calendar Optimization')
+  ![Calendar Optimization](screenshot/RPMS-CalendarOptim.png?raw=true 'Calendar Optimization')
 
 - Post-Event Analysis
 
   - Efficiency Matrix
+
     ![Efficiency Matrix](screenshot/RPMS-PostEvent-Matrix.png?raw=true 'Efficiency Matrix')
 
   - Detailed Table
+
     ![Detailed Table](screenshot/RPMS-PostEvent-Detailed.png?raw=true 'Detailed Table')
