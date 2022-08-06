@@ -54,3 +54,9 @@ npm install
 ```
 npm start
 ```
+
+### Application Screenshots
+
+- Home page
+
+![Alt text](/screenshot/RPMS-Home.jpg?raw=true 'Home Page')
