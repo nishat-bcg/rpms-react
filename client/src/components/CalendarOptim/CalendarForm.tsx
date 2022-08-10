@@ -23,7 +23,7 @@ import useForm from 'src/utils/hooks/useForm';
 import { useAppDispatch } from 'src/utils/hooks/useRedux';
 import { addToCalendar } from 'src/stores/calendar.slice';
 import { closeModal } from 'src/stores/modal.slice';
-import { lastEdited } from 'src/utils/constant';
+import { lastEdited } from 'src/utils/index';
 
 type CalendarForm = {
   name: string;

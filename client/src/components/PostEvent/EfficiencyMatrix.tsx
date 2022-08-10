@@ -19,7 +19,7 @@ import { useAppDispatch, useAppSelector } from 'src/utils/hooks/useRedux';
 import { fetchCampaignMatrix } from 'src/stores/campaign.slice';
 import { SnackbarContext } from 'src/utils/providers/Snackbar';
 
-import { ColorIndicator } from 'src/utils/constant';
+import { ColorIndicator } from 'src/utils/index';
 
 ChartJS.register(...registerables);
 
